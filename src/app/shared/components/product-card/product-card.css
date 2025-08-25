@@ -1,0 +1,59 @@
+picture{
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid #F2FDF5;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.card-img-top{
+    
+    transition: transform 0.2s ease;
+}
+
+.card-img-top:hover{
+    transform: scale(1.03);
+}
+
+.card{
+    border: 3px solid #c2fac4cb;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card:hover{
+    border-color: #b7f5b9;
+    transform: scale(1.03);
+}
+
+.btn{
+    background: linear-gradient(135deg, hsl(142 90% 45%), hsl(120 100% 35%)) !important;
+    border: none;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 4px 15px;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.btn:hover{
+    box-shadow: 0 15px 12px #21dd592d, 
+                0 -15px 12px #21dd592d;
+}
+
+.price{
+    color: #21DD59;
+    background-color: #E5F8E5;
+    width: fit-content;
+    border-radius: 10px;
+    font-weight: 900;
+}
+
+
+.badge{
+    color: #3399ff !important;
+    background-color: #3399ff1f !important;
+}
+
+

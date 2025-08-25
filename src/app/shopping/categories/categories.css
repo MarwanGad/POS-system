@@ -1,0 +1,17 @@
+.parastoo {
+  font-family: "Parastoo", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.left-column{
+    font-family: "Parastoo", serif;
+
+}
+
+.content{
+  max-width: 1400px;
+  margin: 0 auto;
+}

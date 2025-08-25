@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+body{
+    background: linear-gradient(to right,#94edb457,#4ebe0421, #94edb44b,  #94edb457);
+}
+
+ngb-toast .toast-header,
+ngb-toast .toast-body {
+  background-color: #94edb438 ;
+
+}
+
+
+ngb-toast .toast-header{
+    border-bottom: none;
+}

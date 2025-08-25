@@ -1,0 +1,106 @@
+[
+  {
+    "categoryId": "1753550266726-7213",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2Fntg9cdmbDf%D8%A7%D9%84%D8%AE%D8%B6%D8%A7%D8%B1.png?alt=media&token=b06402a9-2313-4749-9cf7-74afc4ee9d15",
+    "categoryName": "الخضار",
+    "pointsList": {
+      "1754303777662-1933": {
+        "checked": false,
+        "points": 0
+      }
+    }
+  },
+  {
+    "categoryId": "1753550324472-3504",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2Fbsvz6U8XlB%D8%AE%D8%B6%D8%A7%D8%B1%20%D9%85%D9%82%D8%B7%D8%B9_.png?alt=media&token=2a6f6d67-29e6-44b5-8488-4ff08e12e386",
+    "categoryName": "خضار مقطع",
+    "pointsList": {
+      "1754303777662-1933": {
+        "checked": false,
+        "points": 0
+      }
+    }
+  },
+  {
+    "categoryId": "1753550373793-5924",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2F6Ks6d3nJRO%D9%85%D8%AD%D8%A7%D8%B4%D9%8A_.png?alt=media&token=3a27d102-f5fe-4236-bcbf-4be49dd5d57f",
+    "categoryName": "طبخة بكرا",
+    "pointsList": {
+      "1754303777662-1933": {
+        "checked": false,
+        "points": 0
+      }
+    }
+  },
+  {
+    "categoryId": "1753550376299-6134",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2FIq5yrwsg0P%D8%A7%D9%84%D9%81%D9%88%D8%A7%D9%83%D8%A9.png?alt=media&token=bfca0a54-db9b-40b9-ac83-37f421e2810c",
+    "categoryName": "الفواكة",
+    "pointsList": {
+      "1754303777662-1933": {
+        "checked": false,
+        "points": 0
+      }
+    }
+  },
+  {
+    "categoryId": "1753550376954-7517",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2FhQSU76pxa5%D8%B3%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D9%81%D9%88%D8%A7%D9%83%D8%A9.png?alt=media&token=d4b8e9ff-5ff3-4ddb-b955-46c3a3f1b1c3",
+    "categoryName": "سلات الفواكة",
+    "pointsList": {
+      "1754303777662-1933": {
+        "checked": false,
+        "points": 0
+      }
+    }
+  },
+  {
+    "categoryId": "1753550377507-9765",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2F4opSZMaMc5%D8%AF%D9%88%D8%A7%D8%AC%D9%86%C2%A0%D9%88%D9%84%D9%84%D8%AD%D9%88%D9%85.png?alt=media&token=06d3f669-a6ce-4f28-90a8-1acb7b8bc1df",
+    "categoryName": "اللحوم",
+    "pointsList": {
+      "1754303777662-1933": {
+        "checked": false,
+        "points": 0
+      }
+    }
+  },
+  {
+    "categoryId": "1753550377977-5792",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2FdHXlP0lZLe%D9%88%D8%B1%D9%82%D9%8A%D8%A7%D8%AA%20.png?alt=media&token=176c4733-6f2a-4b27-8e0c-7f8ec7449deb",
+    "categoryName": "ورقيات",
+    "pointsList": {
+      "1754303777662-1933": {
+        "checked": false,
+        "points": 0
+      }
+    }
+  },
+  {
+    "categoryId": "1753550378437-7944",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2Ffh7Z0xpb49%D8%A7%D8%B3%D9%85%D8%A7%D9%83.png?alt=media&token=33bd1f0b-a6eb-4367-a2e6-368779cb2ec3",
+    "categoryName": "اسماك",
+    "pointsList": {
+      "1754303777662-1933": {
+        "checked": false,
+        "points": 0
+      }
+    }
+  },
+  {
+    "categoryId": "1753559248665-2762",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2FfeM0CqHBc9ED-55.jpg?alt=media&token=cbeda987-4629-4c6f-812f-19df4a3a647a",
+    "categoryName": "الدواجن والبيض",
+    "pointsList": {
+      "1754303777662-1933": {
+        "checked": false,
+        "points": 0
+      }
+    }
+  },
+  {
+    "categoryId": "1754577578071-3872",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/neat-planet-378416-live/o/project_assets%2F10376%2Fimages%2Fcategories%2FynJ4nHNMMEflag-round-250.png?alt=media&token=bdff71a3-de86-42d9-9d96-ab072d184647",
+    "categoryName": "منتجات مصرية"
+  }
+]
