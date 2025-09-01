@@ -19,7 +19,9 @@
       "shared/*" : [
         "app/shared/*"
       ]
-    }
+    },
+    "resolveJsonModule": true
+    
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

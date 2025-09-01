@@ -1,3 +1,9 @@
-<app-navbar ></app-navbar>
-<app-toast></app-toast>
-<router-outlet></router-outlet>
+<div class="containter" *ngIf="auth.isLoading$ | async; else loaded">
+    <app-loading></app-loading>
+</div>
+
+<ng-template #loaded>
+    <app-navbar ></app-navbar>
+    <app-toast></app-toast>
+    <router-outlet></router-outlet>
+</ng-template>

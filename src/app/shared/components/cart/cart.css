@@ -14,6 +14,7 @@
     border: 3px solid #c2fac4cb;
     border-radius: 15px;
     box-shadow: 0 0px 20px #21dd592d;
+    z-index: 1;
 
 }
 

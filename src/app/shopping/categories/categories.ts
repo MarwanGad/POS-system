@@ -18,7 +18,6 @@ export class Categories implements OnInit {
 
   ngOnInit(): void {
     this.categoires = this.categoiresService.getAllCategories();
-    console.log(this.categoires);
 
     this.productService.getAllProducts()
       .forEach( product => {

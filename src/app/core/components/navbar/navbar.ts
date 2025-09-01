@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { Subscription } from 'rxjs';
 import { cartItemInterface } from 'shared/models/cartItem.interface';
 import { CartService } from 'shared/services/cart-service';
@@ -15,7 +16,9 @@ export class Navbar implements OnInit , OnDestroy{
   subscription: Subscription | null = null;
   currentCart: cartItemInterface[] = [];
 
-  constructor(private productService: ProductService, private cartService: CartService){}
+  constructor(private productService: ProductService,
+              private cartService: CartService,
+              public auth: AuthService){}
 
   ngOnInit(): void {
    this.productsQuantity = this.productService.productsQuantity(); 

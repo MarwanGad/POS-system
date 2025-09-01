@@ -27,6 +27,7 @@
     "@angular/localize": "^20.2.1",
     "@angular/platform-browser": "^20.1.0",
     "@angular/router": "^20.1.0",
+    "@auth0/auth0-angular": "^2.2.3",
     "@ng-bootstrap/ng-bootstrap": "^19.0.1",
     "bootstrap": "^5.3.7",
     "bootstrap-icons": "^1.13.1",

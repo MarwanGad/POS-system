@@ -23,8 +23,6 @@ export class Cart implements OnInit,OnDestroy {
     this.subscription = this.CartService.cart$
       .subscribe(items => {
         this.currentCart = items;
-        console.log(this.currentCart);
-
         this.totalPrice = this.currentCart.reduce( (sum, item) => sum + item.regularPrice * item.quantity,0);
       })
   }

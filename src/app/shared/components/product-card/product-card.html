@@ -25,7 +25,7 @@
     </div>
 
 
-    <button (click)="addToCart(product)" class="btn btn-primary w-100 d-flex justify-content-center align-items-center">
+    <button *ngIf="roles.includes('admin')" (click)="addToCart(product)" class="btn btn-primary w-100 d-flex justify-content-center align-items-center">
       <i class="bi bi-plus fs-5"></i>
       <span>إضافة للسلة</span>
     </button>

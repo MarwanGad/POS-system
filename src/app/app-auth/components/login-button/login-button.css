@@ -1,0 +1,21 @@
+button{
+    border:none;
+    height: fit-content;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+
+.bi {
+    color: #15e253;
+    transition: color 0.3s ease;
+}
+
+button:hover,
+.bi:hover{
+
+    transform: scale(1.1);
+    color: #15e252ad;
+}
