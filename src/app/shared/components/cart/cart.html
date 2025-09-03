@@ -10,7 +10,7 @@
         </span>
     </div>
     <div class="cartItems d-flex flex-column">
-        <div *ngIf="!currentCart" style="color: #64748b;" >السلة فارغة</div>
+        <div class="text-center" *ngIf="currentCart.length === 0" style="color: #64748b;" >السلة فارغة</div>
         <div *ngIf="currentCart.length > 0">
                 <div  *ngFor="let product of currentCart" style="width: 100%;">
                     <cart-item-card [product]="product"></cart-item-card>

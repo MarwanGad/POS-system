@@ -1,14 +1,13 @@
 <nav class="navbar sticky-top">
   <div class="inner  d-flex justify-content-between align-items-center  w-100">
-    <div class="d-flex align-items-center justify-content-center gap-3 ">
-        <i class="bi bi-shop-window text-white p-2 "></i>
-        <span class="title fs-2 fw-bold ">
+    <div class="d-flex align-items-center justify-content-center gap-2 ">
+        <i class="bi bi-shop-window"></i>
+        <span class="title fs-2 fw-bold mt-2">
           نظام نقاط البيع
         </span>
         <span class="title-sm text-white fw-bold">
           متجر المواد الغذائية
         </span>
-        
     </div>
 
     <div class="d-flex justify-content-center align-items-center gap-3">
@@ -17,7 +16,7 @@
         منتج {{productsQuantity}}
       </div>
       <div class="cartQuantity fw-bold" *ngIf="currentCart.length">
-         {{currentCart.length}} عنصر في السلة
+         {{cartProductsQuantity}} عنصر في السلة
       </div>
       <login-button *ngIf="!(auth.isAuthenticated$ | async); else loggedIn"></login-button>
       <ng-template #loggedIn>

@@ -24,7 +24,6 @@ export class Account implements OnInit, OnDestroy {
     this.userSubscription = this.auth.user$
       .subscribe( userCredentials => {
         this.loggedInUser = userCredentials;
-        console.log(this.loggedInUser);
       })
   }
 

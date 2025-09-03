@@ -7,17 +7,18 @@ import products from 'shared/products.json';
 })
 export class ProductService{
 
-  getProductsById(categoryId: string){
-    const productsArray = Object.values(products) as ProductInterface[];
+  private products: ProductInterface[] = Object.values(products) as ProductInterface[];
 
-    return productsArray.filter(product => product.categoriesIds.includes(categoryId));
+  getAllProducts(): ProductInterface[] {
+    return this.products;
   }
 
-  getAllProducts(){
-    return Object.values(products);
+  getProductsByCategoryId(categoryId: string): ProductInterface[] {
+    return this.products.filter(product => product.categoriesIds.includes(categoryId));
   }
 
-  productsQuantity(){
-    return Object.values(products).length;
+
+  getProductsQuantity(): number {
+    return this.products.length;
   }
 }

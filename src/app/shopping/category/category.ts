@@ -26,6 +26,6 @@ export class Category implements OnInit {
     
     if(categoryId !== null)
       this.currentCategory = this.categoryService.getCategory(categoryId) || null;                  
-      this.products = this.productService.getProductsById(categoryId!) || [];
+      this.products = this.productService.getProductsByCategoryId(categoryId!) || [];
   }
 }

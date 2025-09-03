@@ -6,13 +6,13 @@ import { CategoryInterface } from 'shared/models/category.interface';
   providedIn: 'root'
 })
 export class CategoriesService {
-  private categoires: CategoryInterface[] = categories;
+  private categories: CategoryInterface[] = categories;
 
-  getAllCategories(){
-    return categories;
+  getAllCategories(): CategoryInterface[]{
+    return this.categories;
   }
 
-  getCategory(categoryId: string){
-    return this.categoires.find( category => category.categoryId === categoryId);
+  getCategory(categoryId: string): CategoryInterface | undefined{
+    return this.categories.find( category => category.categoryId === categoryId);
   }
 }

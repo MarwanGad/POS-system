@@ -15,17 +15,20 @@ export class Navbar implements OnInit , OnDestroy{
   productsQuantity: number = 0;
   subscription: Subscription | null = null;
   currentCart: cartItemInterface[] = [];
-
+  cartProductsQuantity: number = 0;
+  
   constructor(private productService: ProductService,
               private cartService: CartService,
               public auth: AuthService){}
 
   ngOnInit(): void {
-   this.productsQuantity = this.productService.productsQuantity(); 
+   this.productsQuantity = this.productService.getProductsQuantity(); 
 
    this.subscription = this.cartService.cart$
       .subscribe(items => {
         this.currentCart = items;
+        this.cartProductsQuantity = this.currentCart
+          .reduce((total, item) => total + item.quantity, 0)
     })
   }
 
