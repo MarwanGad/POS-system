@@ -9,7 +9,7 @@ import { ToastService } from 'shared/services/toast-service';
   selector: 'product-card',
   standalone: false,
   templateUrl: './product-card.html',
-  styleUrl: './product-card.css'
+  styleUrl: './product-card.css',
 })
 export class ProductCard implements OnInit, OnDestroy {
   roles: string[] = [];
@@ -17,31 +17,29 @@ export class ProductCard implements OnInit, OnDestroy {
 
   @Input('product') product: ProductInterface | null = null;
 
-  constructor(private cartService: CartService, 
-              private toastService: ToastService,
-              private auth: AuthService){}
+  constructor(
+    private cartService: CartService,
+    private toastService: ToastService,
+    private auth: AuthService
+  ) {}
 
-  addToCart(productToAdd: ProductInterface | null){
-    if(productToAdd)
+  addToCart(productToAdd: ProductInterface | null) {
+    if (productToAdd) {
       this.cartService.addProduct(productToAdd);
-
-    this.toastService.show({
-      header: 'تم إضافة المنتج',
-      body: `${productToAdd?.productName}`
-    })
+      this.toastService.show({
+        header: 'تم إضافة المنتج',
+        body: `${productToAdd?.productName}`,
+      });
+    }
   }
 
   ngOnInit(): void {
-    this.subscription = this.auth.user$
-      .subscribe(user => {
-        this.roles = user?.['https://auth.myapp.com/roles'] || [];
-      })
+    this.subscription = this.auth.user$.subscribe((user) => {
+      this.roles = user?.['https://auth.myapp.com/roles'] || [];
+    });
   }
 
   ngOnDestroy(): void {
-    if(this.subscription)
-      this.subscription.unsubscribe();
+    if (this.subscription) this.subscription.unsubscribe();
   }
-  
-
 }

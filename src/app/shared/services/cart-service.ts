@@ -7,10 +7,11 @@ import { ProductInterface } from 'shared/models/product.interface';
   providedIn: 'root',
 })
 export class CartService {
-  
-  private cartItems: cartItemInterface[] = [];
-  private cartSubject = new BehaviorSubject<cartItemInterface[]>([]);
+  cartItems: cartItemInterface[] = [];
+  cartSubject = new BehaviorSubject<cartItemInterface[]>([]);
   cart$ = this.cartSubject.asObservable();
+
+  constructor() {}
 
   addProduct(product: ProductInterface): void {
     const existingProduct = this.cartItems.find(
@@ -59,7 +60,7 @@ export class CartService {
     this.updateCart();
   }
 
-  private updateCart(): void {
+  updateCart(): void {
     this.cartSubject.next([...this.cartItems]);
   }
 }

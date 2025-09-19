@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
-import  categories from 'shared/categories.json';
+import categories from 'shared/categories.json';
 import { CategoryInterface } from 'shared/models/category.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoriesService {
-  private categories: CategoryInterface[] = categories;
+  categories: CategoryInterface[] = categories;
 
-  getAllCategories(): CategoryInterface[]{
+  getAllCategories(): CategoryInterface[] {
     return this.categories;
   }
 
-  getCategory(categoryId: string): CategoryInterface | undefined{
-    return this.categories.find( category => category.categoryId === categoryId);
+  getCategoryById(categoryId: string): CategoryInterface | undefined {
+    return this.categories.find(
+      (category) => category.categoryId === categoryId
+    );
   }
 }
