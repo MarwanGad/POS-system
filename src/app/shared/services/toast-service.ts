@@ -9,7 +9,7 @@ export class ToastService {
   private toastSubject = new Subject<ToastInterface>();
   toast$ = this.toastSubject.asObservable();
 
-  show(toast: ToastInterface) {
+  show(toast: ToastInterface): void {
     this.toastSubject.next(toast);
   }
 }

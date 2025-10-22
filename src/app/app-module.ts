@@ -6,6 +6,7 @@ import { App } from './app';
 import { AppRoutingModule } from './app-routing-module';
 import { ShoppingModule } from './shopping/shopping-module';
 import { CoreModule } from './core/core-module';
+import { AppAuthModule } from './app-auth/app-auth-module';
 
 
 
@@ -19,7 +20,7 @@ import { CoreModule } from './core/core-module';
     AppRoutingModule,
     SharedModule,
     ShoppingModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

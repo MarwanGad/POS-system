@@ -5,9 +5,12 @@ import { CategoryInterface } from 'shared/models/category.interface';
   selector: 'category-card',
   standalone: false,
   templateUrl: './category-card.html',
-  styleUrl: './category-card.css'
+  styleUrl: './category-card.css',
+  host: {
+    'data-testid': 'categoryCard',
+  },
 })
 export class CategoryCard {
   @Input('category') category: CategoryInterface | null = null;
-  @Input('count') count : number = 0;
+  @Input('count') count: number = 0;
 }

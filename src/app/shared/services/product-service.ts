@@ -3,21 +3,22 @@ import { ProductInterface } from 'shared/models/product.interface';
 import products from 'shared/products.json';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ProductService{
+export class ProductService {
+  products: ProductInterface[] = Object.values(products) as ProductInterface[];
 
-  getProductsById(categoryId: string){
-    const productsArray = Object.values(products) as ProductInterface[];
-
-    return productsArray.filter(product => product.categoriesIds.includes(categoryId));
+  getAllProducts(): ProductInterface[] {
+    return this.products;
   }
 
-  getAllProducts(){
-    return Object.values(products);
+  getProductsByCategoryId(categoryId: string): ProductInterface[] {
+    return this.products.filter((product) =>
+      product.categoriesIds.includes(categoryId)
+    );
   }
 
-  productsQuantity(){
-    return Object.values(products).length;
+  countAllProducts(): number {
+    return this.products.length;
   }
 }
