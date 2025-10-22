@@ -1,16 +1,60 @@
-@import 'bootstrap/dist/css/bootstrap.css';
-@import 'bootstrap-icons/font/bootstrap-icons.css';
-body{
-    background: linear-gradient(to right,#94edb457,#4ebe0421, #94edb44b,  #94edb457);
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #5a3e1e; // default
+  --secondary-color: #ede8e4; // default
+  --text-color: #393232;
+  --background-color: #86522d0b;
+  --nav-bg: #ffffff;
+  --primary-border: color-mix(in srgb, var(--primary-color) 30%, white);
+  --font-family: 'Poppins', sans-serif;
+}
+body {
+  background-color: #86522d0b;
 }
 
-ngb-toast .toast-header,
-ngb-toast .toast-body {
-  background-color: #94edb438 ;
-
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-family);
 }
 
+/* Centered and styled toaster for the table menu */
+.toast-bottom-center {
+  bottom: 60px !important; /* height from screen bottom */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  position: fixed !important;
+  z-index: 999999 !important;
+}
 
-ngb-toast .toast-header{
-    border-bottom: none;
+/* General toaster container */
+.toast-container .ngx-toastr {
+  background: #f3f3f3 !important; /* light gray background */
+  color: var(--text-color) !important; /* dark text */
+  border-radius: 12px !important;
+  padding: 12px 18px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid #ddd !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+/* custom elements in arabic */
+[dir='rtl'] nav .subTitle {
+  margin-bottom: 10px !important;
+  span {
+    padding-top: 5px !important;
+  }
+}
+
+/* flip icon in RTL (if not switching icon name) */
+[dir='rtl'] nav .backButton .backIcon {
+  transform: scaleX(-1) !important;
+}
+
+.page-container {
+  padding: 30px;
 }
