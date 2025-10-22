@@ -1,0 +1,53 @@
+<div class="modal" id="receiptModal" tabindex="-1" aria-labelledby="receiptLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-3 shadow">
+      <div class="modal-header d-flex flex-column align-items-center justify-content-center">
+        <div class="modal-title fs-3 d-flex gap-1 m-0" id="receiptLabel">
+            <i class="bi bi-receipt"></i>
+            <span>فاتورة البيع</span>
+        </div>
+        <p class="fs-4 store fw-bold m-0">متجر المواد الغذائية</p>
+        <p class="date m-0">رقم الفاتورة:{{recepitId}}</p>
+        <p class="date m-0">{{currentDate}}</p>
+      </div>
+      <div class="modal-body">
+
+        <div class="ms-2 me-2" *ngFor="let product of cart">
+            <div class="d-flex justify-content-between mb-2">
+                <div class="d-flex flex-column">
+                    <span class="productName fw-bold">{{product?.productName}}</span>
+                    <span class="productQuantity">{{product?.regularPrice | number:'1.2-2'}} x {{product?.quantity}} ر.س</span>
+                </div>
+                <span class="productTotalPrice fs-5 fw-bold">{{ ( (product?.regularPrice ?? 0) * (product?.quantity ?? 0) ) | number:'1.2-2' }} ر.س</span>
+            </div>
+        </div>
+
+     </div>
+      <div class="modal-footer d-flex flex-column gap-3 ms-2 me-2">
+            <div class="summary d-flex justify-content-between w-100">
+                <span class="fw-bold fs-4">المجموع:</span>
+                <div class="totalPrice d-flex justify-content-center align-items-center gap-1">
+                    <span class="fs-2" style="font-weight: 900;">{{totalPrice() | number:'1.2-2'}} </span>
+                    <span class="fs-5">ر.س</span>
+                </div>
+            </div>
+            <span style="color: #64748b;">شكراً لتسوقكم معنا</span>
+            <div class="actions d-flex flex-column align-items-center gap-2 w-100">
+                <div class="w-100 d-flex gap-2 download">
+                    <button [useExistingCss]="true" printSectionId="receiptModal" ngxPrint type="button" class="btn btn-primary w-50 d-flex gap-2 justify-content-center">
+                        <i class="bi bi-printer"></i>
+                        طباعة
+                    </button>
+                    <button (click)="downloadReceipt()" type="button" class="btn btn-primary w-50 d-flex gap-2 justify-content-center">
+                        <i class="bi bi-download"></i>
+                        تحميل
+                    </button>
+                </div>
+                <div class="w-100 close">
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
