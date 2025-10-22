@@ -11,10 +11,10 @@ export const environment = {
   mapApiKey: 'AIzaSyBXJToKANuBXhKFNtmTjbtM1DRxbqc_0zQ',
   builderAdmin: 'https://builder.staging.stacksmarket.co/wp-json/v4/',
   auth0: {
-    domain: 'stacks_auth0_domain',
-    clientId: 'stacks_auth0_client_id',
+    domain: 'dev-l0pw2od54vx31tmu.us.auth0.com',
+    clientId: 'Q3L5Nm4FxEPTirlszbhS3KEz3jRsOnnH',
     authorizationParams: {
-      redirect_uri: 'stacks_auth0_redirect_uri',
+      redirect_uri: window.location.origin,
     },
   },
   firebaseConfig: {
