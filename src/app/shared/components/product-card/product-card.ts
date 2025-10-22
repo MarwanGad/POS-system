@@ -9,7 +9,7 @@ import { ToastService } from 'shared/services/toast-service';
   selector: 'product-card',
   standalone: false,
   templateUrl: './product-card.html',
-  styleUrl: './product-card.css',
+  styleUrl: './product-card.scss',
 })
 export class ProductCard implements OnInit, OnDestroy {
   roles: string[] = [];

@@ -8,7 +8,7 @@ import { ProductInterface } from 'shared/models/product.interface';
   selector: 'cart',
   standalone: false,
   templateUrl: './cart.html',
-  styleUrl: './cart.css'
+  styleUrl: './cart.scss'
 })
 export class Cart implements OnInit,OnDestroy {
   totalPrice: number = 0;

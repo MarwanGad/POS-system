@@ -7,7 +7,7 @@ import { ToastService } from 'shared/services/toast-service';
   selector: 'app-toast',
   standalone: false,
   templateUrl: './toast.html',
-  styleUrl: './toast.css'
+  styleUrl: './toast.scss'
 })
 export class Toast implements OnInit, OnDestroy {
   toasts: ToastInterface[] = [];

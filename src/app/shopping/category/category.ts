@@ -10,7 +10,7 @@ import { ProductService } from 'shared/services/product-service';
   selector: 'app-category',
   standalone: false,
   templateUrl: './category.html',
-  styleUrl: './category.css',
+  styleUrl: './category.scss',
 })
 export class Category implements OnInit {
   products: ProductInterface[] = [];

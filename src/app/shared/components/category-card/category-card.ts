@@ -5,7 +5,7 @@ import { CategoryInterface } from 'shared/models/category.interface';
   selector: 'category-card',
   standalone: false,
   templateUrl: './category-card.html',
-  styleUrl: './category-card.css',
+  styleUrl: './category-card.scss',
   host: {
     'data-testid': 'categoryCard',
   },

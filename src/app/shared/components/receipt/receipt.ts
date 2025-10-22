@@ -7,7 +7,7 @@ import { cartItemInterface } from 'shared/models/cartItem.interface';
   selector: 'receipt',
   standalone: false,
   templateUrl: './receipt.html',
-  styleUrl: './receipt.css'
+  styleUrl: './receipt.scss'
 })
 export class Receipt implements OnInit {
   currentDate:any;

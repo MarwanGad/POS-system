@@ -7,7 +7,7 @@ import { ProductService } from 'shared/services/product-service';
   selector: 'categories',
   standalone: false,
   templateUrl: './categories.html',
-  styleUrl: './categories.css'
+  styleUrl: './categories.scss'
 })
 export class Categories implements OnInit {
   categoires: CategoryInterface[] = [];

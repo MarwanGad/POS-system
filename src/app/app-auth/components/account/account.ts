@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-account',
   standalone: false,
   templateUrl: './account.html',
-  styleUrl: './account.css',
+  styleUrl: './account.scss',
 })
 export class Account implements OnInit, OnDestroy {
   loggedInUser: any;

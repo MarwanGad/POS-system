@@ -9,7 +9,7 @@ import { ProductService } from 'shared/services/product-service';
   selector: 'app-navbar',
   standalone: false,
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css',
+  styleUrl: './navbar.scss',
 })
 export class Navbar implements OnInit, OnDestroy {
   productsQuantity: number = 0;

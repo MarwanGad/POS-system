@@ -7,7 +7,7 @@ import { CartService } from 'shared/services/cart-service';
   selector: 'cart-item-card',
   standalone: false,
   templateUrl: './cart-item-card.html',
-  styleUrl: './cart-item-card.css'
+  styleUrl: './cart-item-card.scss'
 })
 export class CartItemCard {
   @Input('product') product: any;
