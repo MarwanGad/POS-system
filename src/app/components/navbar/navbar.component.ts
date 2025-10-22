@@ -5,6 +5,7 @@ import { GlobalsService } from './../../services/helpers/globals.service';
 import { CartService } from '../../services/cart.service';
 import { TranslationService } from '../../services/helpers/translation.service';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-navbar',
@@ -24,6 +25,7 @@ export class NavbarComponent implements OnInit {
     public router: Router,
     public translationService: TranslationService,
     private toastr: ToastrService,
+    public auth: AuthService,
     public cartService: CartService
   ) {}
 
@@ -119,5 +121,13 @@ export class NavbarComponent implements OnInit {
       selectElement.focus();
       selectElement.click();
     }
+  }
+
+    loginWithRedirect() {
+    this.auth.loginWithRedirect();
+  }
+
+  logout() {
+    this.auth.logout({ logoutParams: { returnTo: window.location.origin } });
   }
 }
