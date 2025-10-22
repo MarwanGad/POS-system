@@ -9,13 +9,14 @@ export const environment = {
   debug: true,
   appType: 'localApplication',
   mapApiKey: 'AIzaSyBXJToKANuBXhKFNtmTjbtM1DRxbqc_0zQ',
-  builderAdmin: 'http://localhost/stacks-builder-backend/wp-json/v4/',
+  builderAdmin: 'https://builder.staging.stacksmarket.co/wp-json/v4/',
   auth0: {
-    domain: 'stacks_auth0_domain',
-    clientId: 'stacks_auth0_client_id',
+    domain: 'dev-l6eo3m2i7ghn6zve.us.auth0.com',
+    clientId: 'uJLwMewpZiBmyjnNsj6KF1PLP1wyQHBo',
+    audience: 'https://my-api.com',
     authorizationParams: {
-      redirect_uri: 'stacks_auth0_redirect_uri'
-    }
+      redirectUrl: window.location.origin,
+    },
   },
   firebaseConfig: {
     apiKey: 'AIzaSyA00BUWrxC6HeXoI18rKFXRavTEeZwuu2s',

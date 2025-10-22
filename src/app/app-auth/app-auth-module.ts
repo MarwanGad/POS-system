@@ -11,7 +11,7 @@ import { Account } from './components/account/account';
   imports: [
     CommonModule,
     AuthModule.forRoot({
-      ...environment.auth,
+      ...environment.auth0,
     }),
   ],
   exports: [LoginButton, Account],
