@@ -14,8 +14,8 @@ export const environment = {
     domain: 'stacks_auth0_domain',
     clientId: 'stacks_auth0_client_id',
     authorizationParams: {
-      redirect_uri: 'stacks_auth0_redirect_uri'
-    }
+      redirect_uri: 'stacks_auth0_redirect_uri',
+    },
   },
   firebaseConfig: {
     apiKey: 'AIzaSyA00BUWrxC6HeXoI18rKFXRavTEeZwuu2s',

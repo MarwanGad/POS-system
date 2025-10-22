@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="imgContainer">
+    <img [src]="category?.categoryImage" class="card-img-top" alt="{{ category?.categoryName }}" />
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{ category?.categoryName | translate }}</p>
+    <div class="count">
+      <span class="count-number">{{ categoryProductCount }}</span>
+      <span class="count-label">{{ 'Product' | translate }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="checkout-container">
+  <h2>{{ 'How would you rate our service' | translate }}?</h2>
+  <p class="tip-subtitle">
+    {{ 'Choose the tip percentage that reflects your satisfaction level' | translate }}
+  </p>
+
+  <!-- 💰 Tip Selection Section -->
+  <div class="tips-container">
+    <div
+      class="tip-card"
+      *ngFor="let tip of [0, 10, 15, 20]"
+      [class.active]="selectedTip === tip"
+      (click)="selectTip(tip)"
+    >
+      <p class="tip-percentage">{{ tip | number : '1.0-0' | translate }}%</p>
+      <p class="tip-description">
+        {{
+          tip === 0
+            ? ('No Tip' | translate)
+            : tip === 10
+            ? ('Good Service' | translate)
+            : tip === 15
+            ? ('Excellent Service' | translate)
+            : ('Exceptional Service' | translate)
+        }}
+        – {{ tip | number : '1.0-0' | translate }}%
+      </p>
+    </div>
+  </div>
+
+  <!-- ✍️ Custom Tip Input -->
+  <div class="custom-tip">
+    <p>{{ 'Or enter a custom percentage' | translate }}</p>
+    <div class="custom-input">
+      <input
+        type="number"
+        placeholder="{{ 'Enter percentage' | translate }}"
+        [(ngModel)]="customTip"
+        (input)="updateCustomTip()"
+      />
+      <span>%</span>
+    </div>
+  </div>
+
+  <!-- 🧾 Order Summary -->
+  <div class="order-summary" *ngIf="cartService.cartItems.length > 0">
+    <h3>{{ 'Order Summary' | translate }}</h3>
+
+    <!-- 🛒 Items -->
+    <div class="summary-item" *ngFor="let item of cartService.cartItems">
+      <div class="item-info">
+        <p class="item-name">{{ item.product.productName }}</p>
+        <p class="item-quantity">×{{ item.quantity | number : '1.0-0' | translate }}</p>
+      </div>
+      <p class="item-price">
+        {{
+          (item.product.salePrice || item.product.regularPrice) * item.quantity
+            | number : '1.2-2'
+            | translate
+        }}
+        {{ globals.currency | translate }}
+      </p>
+    </div>
+
+    <hr />
+
+    <div class="summary-tip" *ngIf="tipAmount > 0">
+      <p>{{ 'Tip' | translate }} ({{ selectedTip | number : '1.0-0' | translate }}%):</p>
+      <p>
+        {{ tipAmount | number : '1.2-2' | translate }}
+        {{ globals.currency | translate }}
+      </p>
+    </div>
+
+    <div class="summary-total">
+      <p>{{ 'SubTotal' | translate }}:</p>
+      <p>
+        {{ cartService.total | number : '1.2-2' | translate }}
+        {{ globals.currency | translate }}
+      </p>
+    </div>
+
+    <!-- 💰 Grand Total -->
+    <div class="summary-grand-total">
+      <p>
+        <strong>{{ 'Grand Total' | translate }}:</strong>
+      </p>
+      <p>
+        <strong>
+          {{ grandTotal | number : '1.2-2' | translate }}
+          {{ globals.currency | translate }}
+        </strong>
+      </p>
+    </div>
+
+    <button class="place-order-btn" (click)="placeOrder()">
+      {{ 'Place Order' | translate }}
+    </button>
+  </div>
+</div>

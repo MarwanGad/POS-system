@@ -1,0 +1,36 @@
+<div class="page-container">
+  <div class="categoryName">
+    <p class="category">{{ category?.categoryName | translate }}</p>
+    <p class="numberOfProducts">
+      {{ 'Found' | translate }} <span>{{ products.length | translate }}</span>
+      {{ 'Products' | translate }}
+    </p>
+  </div>
+
+  <div class="many-products">
+    <div class="card" *ngFor="let product of products">
+      <div class="imgContainer">
+        <img
+          [src]="product.imgageUrl || product.imageUrl[0]"
+          class="card-img-top"
+          alt="{{ product.productName }}"
+        />
+      </div>
+      <div class="card-body">
+        <div class="product-details">
+          <p class="card-text">{{ product.productName | translate }}</p>
+          <div class="price-container">
+            <span class="productPrice">{{
+              product.salePrice || product.regularPrice | number : '1.2-2' | translate
+            }}</span>
+            <span class="currency">{{ globals.currency | translate }}</span>
+          </div>
+        </div>
+        <button class="addToCart" (click)="cartService.addToCart(product)">
+          <span class="plus">+</span>
+          <span>{{ 'add to cart' | translate }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

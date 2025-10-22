@@ -1,0 +1,66 @@
+<nav>
+  <div class="nav-container" *ngIf="!orderChecked">
+    <div class="nav-left">
+      <div
+        *ngIf="backButtonVisible && !this.isRtl"
+        (click)="navigateToPreviousUrl()"
+        class="backButton"
+      >
+        <mat-icon>arrow_back</mat-icon>
+      </div>
+
+      <div class="iconContainer">
+        <img [src]="globals.appIcon" alt="{{ globals.appName }}" />
+      </div>
+      <h1 class="title">{{ globals.appName | translate }}</h1>
+      <button class="cart-button" *ngIf="this.globals.instagramPage" (click)="openInstagram()">
+        <i class="contactIcons fa-brands fa-instagram"></i>
+      </button>
+      <button class="cart-button" *ngIf="this.globals.phoneNumber" (click)="copyPhoneNumber()">
+        <i class="contactIcons fa-solid fa-phone"></i>
+      </button>
+      <div class="subTitle">
+        <mat-icon class="locationIcon">add_location</mat-icon>
+        <span>{{ 'Table' | translate }} {{ globals.tableNumber | translate }}</span>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="cart-button" (click)="goToCart()" *ngIf="cartService.cartLength > 0">
+        <mat-icon class="cartIcon">shopping_cart</mat-icon>
+        <span class="cart-text">{{ 'Cart' | translate }}</span>
+        <span class="cart-count">{{ cartService.cartLength | translate }}</span>
+      </button>
+
+      <div class="language-select" *ngIf="translationService.availableLanguages.length > 0">
+        <select
+          #selectLanguages
+          [class.hidden]="showLanguageIcon"
+          [ngModel]="translationService.CurrentLanguage"
+          (ngModelChange)="changeLang($event)"
+        >
+          <option *ngFor="let lang of translationService.availableLanguages" [value]="lang">
+            {{ lang }}
+          </option>
+        </select>
+        <mat-icon
+          *ngIf="showLanguageIcon"
+          class="languagesIcon"
+          (click)="openLanguagesMenu(selectLanguages)"
+          >keyboard_arrow_down</mat-icon
+        >
+      </div>
+      <div
+        *ngIf="backButtonVisible && this.isRtl"
+        (click)="navigateToPreviousUrl()"
+        class="backButton"
+      >
+        <mat-icon>arrow_back</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-content" *ngIf="orderChecked">
+    <h2>{{ 'Your order has been confirmed' | translate }}</h2>
+    <span class="material-symbols-outlined">task_alt</span>
+  </div>
+</nav>

@@ -1,0 +1,19 @@
+<div class="page-container">
+  <div class="text-container">
+    <h2 class="header">{{ 'Welcome' | translate }}</h2>
+    <p class="subHeader">
+      {{ 'Select the category for your table' | translate }} - {{ 'Table Number' | translate }}
+      {{ globals.tableNumber | translate }}
+    </p>
+  </div>
+
+  <div class="categories-container">
+    <div *ngFor="let category of categoryService.allCategories">
+      <category-card
+        class="categoryCard"
+        [category]="category"
+        (click)="goToCategory(category.categoryId)"
+      ></category-card>
+    </div>
+  </div>
+</div>

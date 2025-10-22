@@ -1,0 +1,298 @@
+
+/* 🌟 Container */
+.order-container {
+  font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 32px 16px;
+    gap: 20px;
+  
+    .confirmation-card,
+    .order-details-card,
+    .order-status-card {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  }
+  
+  /* ✅ Confirmation Card */
+  .confirmation-card {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--primary-color) 10%, white),
+      #f9fbff
+    );
+    border: 1px solid var(--primary-border);
+    text-align: center;
+    color: var(--primary-color);
+    padding: 35px 30px;
+  
+    .icon {
+      background-color: var(--primary-color);
+      color: #fff;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 36px;
+      margin: 0 auto 20px auto;
+
+      .material-symbols-outlined {
+        font-size: 40px;
+        line-height: 1;
+      }
+    }
+  
+    h2 {
+      margin: 8px 0;
+      font-size: 24px;
+    }
+  
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+  
+    .order-id {
+      background-color: var(--text-color);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 15px;
+  
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+  
+  /* ✅ Order Details */
+  .order-details-card {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    color: var(--text-color);
+    padding: 24px 30px;
+  
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .material-symbols-outlined {
+        font-size: 22px;
+        color: var(--primary-color);
+      }
+    }
+  
+    .order-info {
+        .order-info-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+      p {
+        margin: 5px 0;
+        color: #555;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+  
+        .material-symbols-outlined {
+          font-size: 18px;
+          color: var(--primary-color);
+        }
+        span {
+          font-weight: 500;
+          color: var(--text-color);
+        }
+      }
+    }
+  
+    .label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #444;
+    }
+    .items {
+      
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        font-size: 15px;
+      }
+    }
+  
+    .summary {
+      margin-top: 10px;
+  
+      .row {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+        font-size: 15px;
+  
+        &.tip span:last-child {
+          color: var(--primary-color);
+          font-weight: 600;
+        }
+  
+        &.total strong {
+          color: var(--primary-color);
+          font-size: 16px;
+        }
+      }
+    }
+  
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 15px 0;
+    }
+  }
+  
+  /* ✅ Order Status */
+  .order-status-card {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--primary-color) 10%, white),
+      #f9fbff
+    );
+    border: 1px solid var(--primary-border);
+    color: var(--text-color);
+    padding: 28px 30px;
+    text-align: center;
+  
+    .time-info {
+        color: var(--text-color)  ;
+        margin-bottom: 20px;
+  
+      .material-symbols-outlined {
+        font-size: 30px;
+        margin-bottom: 10px;
+        color: var(--text-color)  ;
+      }
+  
+      p {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+      }
+  
+      h3 {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 6px 0;
+      }
+  
+      span {
+        display: block;
+        color: var(--text-color)  ;
+        font-size: 14px;
+      }
+    }
+  }
+  
+  /* ✅ Button outside the card */
+  .new-order-btn {
+    background-color: var(--text-color) ;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 20px;
+    width: 100%;
+    max-width: 670px; /* matches card width */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* 📱 Responsive Tweaks */
+  @media (max-width: 600px) {
+    .order-container {
+      padding: 16px;
+      gap: 16px;
+    }
+  
+    .confirmation-card,
+    .order-details-card,
+    .order-status-card {
+      padding: 16px 14px;
+      max-width: 480px;
+    }
+  
+    .confirmation-card h2 {
+      font-size: 20px;
+    }
+  
+    .confirmation-card p {
+      font-size: 14px;
+    }
+  
+    .time-info h3 {
+      font-size: 18px;
+    }
+  
+    .new-order-btn {
+      font-size: 16px;
+      padding: 12px;
+      max-width: 480px;
+    }
+  
+    .order-details-card h3 {
+      font-size: 18px;
+    }
+  
+    .order-details-card .item,
+    .order-details-card .summary .row {
+      font-size: 14px;
+    }
+  
+    .confirmation-card .icon {
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+    }
+  }
+  
+  /* Very small screens (like iPhone SE or Galaxy Mini) */
+  @media (max-width: 400px) {
+    .order-container {
+      padding: 10px;
+    }
+  
+    .confirmation-card,
+    .order-details-card,
+    .order-status-card,
+    .new-order-btn {
+      max-width: 100%;
+    }
+  
+    .confirmation-card h2 {
+      font-size: 18px;
+    }
+  
+    .confirmation-card p,
+    .order-details-card p {
+      font-size: 13px;
+    }
+  
+    .new-order-btn {
+      font-size: 15px;
+      padding: 10px;
+    }
+  }
+  

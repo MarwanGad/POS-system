@@ -1,18 +1,19 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('Stacks menu', async ({ page }) => {
+  await page.goto('/');
+  await page.waitForTimeout(1000)
+  await expect(page.getByText('نظام نقاط البيع')).toBeVisible();
+  await expect(page.getByText('local_dining')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'إجمالي المنتجات:' })).toBeVisible()
+  await expect(page.getByText('I have Products')).toBeVisible()
+  await expect(page.getByText('Category 2')).toBeVisible()
+  await expect(page.getByText('Category 3')).toBeVisible()
+  await expect(page.getByText('Category 5')).toBeVisible()
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+  await page.locator('category-card').filter({ hasText: 'I have Products2منتج' }).getByRole('img').click()
+  await page.waitForTimeout(500)
+  await expect(page.getByRole('button', { name: ' العودة للفئات' })).toBeVisible()
+  await page.getByRole('button', { name: '+إضافة للسلة' }).nth(1).click()
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});

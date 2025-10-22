@@ -1,0 +1,97 @@
+<div class="order-container" *ngIf="orderData">
+  <!-- Confirmation -->
+  <div class="confirmation-card">
+    <div class="icon">
+      <span class="material-symbols-outlined">task_alt</span>
+    </div>
+    <h2>{{ 'Thank you' | translate }}!</h2>
+    <p>
+      {{ 'Your order has been received successfully and will be prepared soon' | translate }}
+    </p>
+    <div class="order-id">
+      {{ 'Order Number' | translate }}:
+      <span>{{ this.orderId | translate }}</span>
+    </div>
+  </div>
+
+  <!-- Order Details -->
+  <div class="order-details-card">
+    <h3>
+      <span class="material-symbols-outlined">assignment</span>
+      {{ 'Order Details' | translate }}
+    </h3>
+
+    <div class="order-info">
+      <div class="order-info-container">
+        <p>
+          <span class="material-symbols-outlined">location_on</span>
+          {{ 'Table Number' | translate }}:
+        </p>
+        <span>{{ this.globals.tableNumber | translate }}</span>
+      </div>
+
+      <div class="order-info-container">
+        <p>
+          <span class="material-symbols-outlined">schedule</span>
+          {{ 'Order Date' | translate }}:
+        </p>
+        <span>{{ orderData?.createdAt | translate }}</span>
+      </div>
+    </div>
+
+    <hr />
+
+    <p class="label">{{ 'Ordered Items' | translate }}:</p>
+    <div class="items" *ngFor="let item of orderData?.items">
+      <div class="item">
+        <span> {{ item.name | translate }} × {{ item.quantity | translate }} </span>
+        <span>
+          {{ item.salePrice || item.regularPrice | number : '1.2-2' | translate }}
+          {{ this.globals.currency | translate }}
+        </span>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="summary">
+      <div class="row">
+        <span>{{ 'SubTotal' | translate }}:</span>
+        <span>
+          {{ orderData?.subtotal | number : '1.2-2' | translate }}
+          {{ this.globals.currency | translate }}
+        </span>
+      </div>
+      <div class="row tip">
+        <span>{{ 'Tip' | translate }}:</span>
+        <span>
+          + {{ orderData?.tipAmount | number : '1.2-2' | translate }}
+          {{ this.globals.currency | translate }}
+        </span>
+      </div>
+      <div class="row total">
+        <strong>{{ 'Total' | translate }}:</strong>
+        <strong>
+          {{ orderData?.grandTotal | number : '1.2-2' | translate }}
+          {{ this.globals.currency | translate }}
+        </strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Status -->
+  <div class="order-status-card">
+    <div class="time-info">
+      <span class="material-symbols-outlined">schedule</span>
+      <p>{{ 'Expected Preparation Time' | translate }}</p>
+      <h3>{{ '15' | translate }} {{ 'minutes' | translate }}</h3>
+      <span>
+        {{ 'Your order will be delivered to your table soon' | translate }}
+      </span>
+    </div>
+  </div>
+
+  <button class="new-order-btn" routerLink="/" queryParamsHandling="preserve">
+    {{ 'New Order' | translate }}
+  </button>
+</div>

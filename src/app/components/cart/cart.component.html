@@ -1,0 +1,82 @@
+<div class="cart-container" *ngIf="cartService.cartItems.length > 0; else emptyCart">
+  <div class="cart-items">
+    <div class="cart-item" *ngFor="let item of cartService.cartItems">
+      <img
+        *ngIf="item.product.imageUrl"
+        [src]="item.product.imageUrl || item.product.imageUrl[0]"
+        alt="{{ item.product.productName }}"
+        class="cart-image"
+        loading="lazy"
+      />
+
+      <div class="cart-info">
+        <p class="product-name">{{ item.product.productName | translate }}</p>
+
+        <div class="item-subtotal">
+          {{ item.product.salePrice || item.product.regularPrice | number : '1.2-2' | translate }}
+          × {{ item.quantity | translate }}
+          <span class="currency">{{ globals.currency | translate }}</span>
+        </div>
+
+        <div class="item-total">
+          {{
+            item.quantity * (item.product.salePrice || item.product.regularPrice)
+              | number : '1.2-2'
+              | translate
+          }}
+          <span class="currency">{{ globals.currency | translate }}</span>
+        </div>
+      </div>
+
+      <div class="quantity-controls">
+        <button (click)="cartService.decreaseQuantity(item)" [disabled]="item.quantity === 1">
+          −
+        </button>
+        <span class="quantityOfSingleProduct">{{ item.quantity | translate }}</span>
+        <button
+          (click)="cartService.increaseQuantity(item)"
+          [disabled]="item.quantity >= item.product.productStock"
+        >
+          +
+        </button>
+        <button class="remove-btn" (click)="cartService.removeItem(item)">
+          <span class="material-symbols-outlined"> delete </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-summary">
+    <h3>{{ 'Order Summary' | translate }}</h3>
+    <div class="summary-row">
+      <span>{{ 'SubTotal' | translate }}:</span>
+      <span>
+        {{ cartService.total | number : '1.2-2' | translate }}
+        <span class="currency">{{ globals.currency | translate }}</span>
+      </span>
+    </div>
+
+    <div class="summary-row items-num">
+      <span>{{ 'Number of items' | translate }}:</span>
+      <span>{{ cartService.cartItems.length | translate }}</span>
+    </div>
+    <hr />
+    <div class="summary-row total">
+      <span>{{ 'Total' | translate }}:</span>
+      <span>
+        {{ cartService.total | number : '1.2-2' | translate }}
+        <span class="currency">{{ globals.currency | translate }}</span>
+      </span>
+    </div>
+
+    <button class="checkout-btn" (click)="goToCheckout()">
+      {{ 'Proceed to Checkout' | translate }}
+    </button>
+  </div>
+</div>
+<ng-template #emptyCart>
+  <div class="empty-cart-message">
+    <span class="material-symbols-outlined">shopping_cart</span>
+    <p>{{ 'Your cart is empty' | translate }}</p>
+  </div>
+</ng-template>
